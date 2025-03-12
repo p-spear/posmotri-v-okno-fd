@@ -56,7 +56,7 @@ ol {
 .content {
   display: grid;
   grid-template-columns: 711px 399px;
-  grid-template-rows: 534px;
+  /*grid-template-rows: 534px;*/
   grid-template-areas:
   'main list';
   align-items: end;
@@ -70,7 +70,7 @@ ol {
   width: 100%;
   grid-template-columns: 100%;
   grid-template-rows: auto 54px;*/
-  align-items: end;
+  justify-content: end;
   grid-area: main;
   gap: 16px;
 }
@@ -88,12 +88,22 @@ ol {
 }
 
 .search-form {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: left;
-  column-gap: 40px;
+  display: inline-flex;
+  height: 54px;
+  align-items: start;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  /*width: 225px;*/
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 5px;
 }
 
 .content__list-container {
@@ -103,14 +113,23 @@ ol {
 
 
 .content__details {
-  height: 100%;
   width: 100%;
   grid-area: list;
 }
 
 .title {
-  margin-bottom: 26px;
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+  color: #545050;
+  margin-bottom: 24.5px;
+}
 
+.content__accent {
+  color: #fff;
 }
 
 .content__list {
@@ -124,4 +143,48 @@ ol {
 }
 
 .content__card-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__video-card {
+  display: flex;
+  width: 100%;
+  align-items: start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*padding-top: 3px;*/
+  padding-bottom: 6px;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  line-height: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+
+  height: 103px;
+  min-width: 194px;
+  object-fit: cover;
+  object-position: center;
+
 }
